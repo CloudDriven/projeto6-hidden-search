@@ -1,57 +1,136 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* Aplicação geral:
+/  * Aplica as regras dentro de todos os elementos da página 
+   box-sizing: border-box; - Define o tamanho total dos elementos incluirá padding 
+   e bordas (facilita o controlo do layout)
+*/
 * {
     box-sizing: border-box;
 }
 
+/*Estilo do corpo da página:*/
 body {
-    background-image: linear-gradient(90deg, #aa951b, #7158e2);
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0;
+    /*Fundo com gradiente linear */
+    /* Cria um gradiente de 90 graus(horizontal) */
+    background-image: linear-gradient(90deg, #aa951b, #7158e2); 
+
+    /* Fonte padrão */
+    /* Define a fonte principal Roboto e sans-serif como alternativa */
+    font-family: 'Roboto', sans-serif; 
+
+    /* layout centralizado com flexbox*/
+    display: flex; /* Ativa o layout flexbox no corpo da página */
+    align-items: center; /* Alinha verticalmente o conteúdo ao centro */
+    justify-content: center; /* Alinha horizontalmente o conteúdo ao centro */
+
+    /* Altura e ajuste da página */
+    height: 100vh; /* Define a altura como 100% da altura da janela de visualização*/
+    overflow: hidden; /* Oculta qualque conteúdo que ultrapasse os limites da página */
+
+    /* Margem zerada */
+    margin: 0; /* Remove qualquer margem padrão do navegador */
   }
 
+  /* Este trecho de código estiliza um elemento com a classe .search */
 .search {
+    /* Define a posição do elemento como relativa */
     position: relative;
+
+    /* Define a altura fixa do elemento como 50 pixels*/
     height: 50px;
+
 }
 
+/*Este trecho estiliza um elemento .input que está dentro de um container com a classe .search */
 .search .input {
+    /* Define a cor de fundo do campo de entrada como branco (#fff) */
     background-color: #fff;
+
+    /*Remove a borda padrão do documento */
     border: 0;
+
+    /* Define o tamanho da fonte para 18pixels */
     font-size: 18px;
+
+    /* Adiciona 15pixels de espaçamento interno ao redor do conteúdo (texto) dentro do campo de entrada */
     padding: 15px;
+
+    /* Define a altura inicial do campo de entrada como 50 pixels */
     height: 50px;
-    width: 50px;
+
+    /* Define a largura inicial do campo de entrada como 50 pixels */
+    width: 60px;
+
+    /* Adiciona uma transição suave de largura (width) do elemento ao longo de 0.3 segundos */
+    /* O efeito é suavizado pelo tipo de transição ease (acelera e desacelera) */
     transition: width 0.3s ease;
 }
 
+/* Este trecho de código estiliza um botão com a classe .btn */
 .btn {
+    /* Define o fundo do botão como branco  */
     background-color: #fff;
+
+    /* Remove qualquer borda padrão do botão */
     border: 0;
+
+    /* Altera o cursor para o estilo "mão" ao passar o mouse sobre o botão, indicando que ele é clicável */
     cursor: pointer;
+
+    /* Define o tamnhao da fonte do conteúdo do botão como 24 pixels */
     font-size: 24px;
+
+    /* Posicionamento */
+    /* Posiciona o botão de forma absoluta, relativo ao container pai posicionado */
     position: absolute;
+
+    /*Posiciona o botão no canto superior esquerdo do container pai */
     top: 0;
     left: 0;
+
+    /* Tamanho  */
+    /* Define as dimensões do botão como um quadrado de 50x50 pixels */
     height: 50px;
     width: 50px;
+
+    /* Transição */
+    /* Adiciona uma transição suave ao botão quando a propriedade transform for alterada.
+    A transição dura 0.3 segundos e utiliza o estilo ease, que acelera e desacelera suavemente. */
     transition: transform 0.3s ease;
 }
 
+/* Este trecho de código remove o contorno padrão (outline) que aparece ao focar nos elementos .btn
+e .input. */
+
+/* Aplica o estilo quando o botão (.btn) recebe foco (por exemplo, ao clicar ou navegar até ele como o teclado)*/
 .btn:focus,
+
+/* Aplica o estilo quando o campo de entrada (.input) recebe foco (por exemplo ao clicar ou tabular para ele) */
 .input:focus {
+    /* Remove o contorno padrão (outline), dos elementos quando estão no estado de foco */
     outline: none;
 }
 
+/* Este trecho de código CSS aplica um estilo específico a um elemento .input dentro de um container .search 
+quando este possui a classe active. */
+
+/* Seletores */
+/* Alvo: O elemento .input 
+   Condição: Ele deve estar dentro de um container com a classe .search que tenha a classe adicional active */
 .search.active .input {
-    width: 200px;
+    /* Define a largura do elemento .input como 200 pixels */
+    width: 250px;
 }
 
+/* Este trecho de código aplica um estilo específico ao elemento .btn quando está dentro de um container .search que possui a classe active */
+
+/* Seletores */
+/* Alvo: O elemento .btn
+   Condição: Ele deve estar dentro de um container com a classe .search que também possua a classe active */
 .search.active .btn {
+    /* Move o botão horizontalmente (no eixo do x) para a direita em 198 pixels
+    A propriedade transform cria uma transformação no espaço visual sem alterar a posição "real" do elemento
+    no fluxo do documento */
     transform: translateX(198px);
 }
